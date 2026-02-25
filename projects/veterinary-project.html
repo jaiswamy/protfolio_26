@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Veterinary Portal | Jai Swamy</title>
+    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="project-container">
+
+    <h2>GitOps-Driven Veterinary Portal Deployment</h2>
+
+    <h3>Client</h3>
+    <p>Karnataka Veterinary University (KVAFSU)</p>
+
+    <h3>Project Overview</h3>
+    <p>
+        Designed and deployed a production-grade veterinary job application portal
+        using Dockerized 3-tier architecture on AWS. Implemented automated CI/CD
+        pipelines and enforced strict security segmentation for high-load production traffic.
+    </p>
+
+    <h3>Architecture</h3>
+    <ul>
+        <li>Custom VPC in ap-south-1</li>
+        <li>Frontend, Backend & Database tier separation</li>
+        <li>Docker & Docker Compose-based deployment</li>
+        <li>Secure subnet design with strict traffic segmentation</li>
+    </ul>
+
+    <h3>CI/CD Implementation</h3>
+    <ul>
+        <li>GitHub commit triggers Jenkins pipeline</li>
+        <li>Automated WAR build process</li>
+        <li>Docker image creation & deployment automation</li>
+        <li>Version-controlled infrastructure provisioning using Terraform</li>
+    </ul>
+
+    <h3>Security Implementation</h3>
+    <ul>
+        <li>My-IP-only SSH restriction</li>
+        <li>Frontend accessible only from Backend SG</li>
+        <li>Database accessible only from Backend SG</li>
+        <li>Strict inbound/outbound traffic control</li>
+    </ul>
+
+    <h3>Monitoring & Observability</h3>
+    <ul>
+        <li>Prometheus for metrics collection</li>
+        <li>Grafana dashboards for real-time monitoring</li>
+        <li>Server health and container metrics tracking</li>
+    </ul>
+
+    <h3>Impact</h3>
+    <ul>
+        <li>Production-ready deployment</li>
+        <li>Improved deployment consistency</li>
+        <li>Secure architecture for payment workflows</li>
+    </ul>
+
+    <br>
+    <a href="../index.html" class="btn">⬅ Back to Portfolio</a>
+
+</div>
+
+</body>
+</html>
