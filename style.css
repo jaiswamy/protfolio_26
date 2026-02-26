@@ -49,8 +49,88 @@ nav ul li a {
     font-weight: bold;
 }
 
-.hero-buttons {
-    margin-top: 25px;
+/* ===== HERO SECTION CLEAN VERSION ===== */
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 180px 20px 140px;
+    background-color: #0f172a;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* DevOps Background Image */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -150px;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    background: url("image/devops-bg.png") no-repeat center;
+    background-size: contain;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Soft radial glow */
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(56,189,248,0.15), transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Hero content must be above background */
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* Gradient Name */
+.hero h1 {
+    font-size: 52px;
+    background: linear-gradient(90deg, #38bdf8, #22c55e, #38bdf8);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s linear infinite;
+}
+
+.hero h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes float {
+    0% { transform: translateY(-50%) translateX(0px); }
+    50% { transform: translateY(-52%) translateX(-10px); }
+    100% { transform: translateY(-50%) translateX(0px); }
+}
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .btn-outline {
@@ -68,67 +148,6 @@ nav ul li a {
 .btn-outline:hover {
     background: #38bdf8;
     color: #0f172a;
-}
-
-.hero {
-    text-align: center;
-    padding: 150px 20px 100px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    color: #38bdf8;
-}
-
-.hero h3 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-/* ===== HERO BACKGROUND IMAGE ===== */
-
-.hero {
-    position: relative;
-    text-align: center;
-    padding: 160px 20px 120px;
-    background-color: #0f172a;
-    overflow: hidden;
-}
-
-/* Background DevOps image */
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -150px; /* push slightly outside */
-    transform: translateY(-50%);
-    width: 600px;
-    height: 600px;
-    background: url("image/devops-bg.png") no-repeat center;
-    background-size: contain;
-    opacity: 0.12;   /* control transparency */
-    pointer-events: none;
-}
-
-@keyframes float {
-    0% { transform: translateY(-50%) translateX(0px); }
-    50% { transform: translateY(-52%) translateX(-10px); }
-    100% { transform: translateY(-50%) translateX(0px); }
-}
-
-.hero::before {
-    animation: float 6s ease-in-out infinite;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 25px;
-    background: #38bdf8;
-    color: #0f172a;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
 }
 
 section {
@@ -364,3 +383,83 @@ footer {
     background: linear-gradient(90deg, transparent, #38bdf8, transparent);
     opacity: 0.6;
 }
+
+/* ===== CAREER PAGE ===== */
+
+#career {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #38bdf8, transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 30px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 35px;
+    left: 100%;
+    width: 16px;
+    height: 16px;
+    background: #38bdf8;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: 0;
+}
+
+.timeline-dot.active {
+    background: #22c55e;
+    box-shadow: 0 0 15px #22c55e;
+}
+
+.timeline-content h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.timeline-content span {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+}
+
