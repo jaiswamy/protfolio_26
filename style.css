@@ -562,3 +562,58 @@ header {
     }
 
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    /* Hero text */
+    .hero h1{
+        font-size: 34px;
+    }
+
+    .hero h3{
+        font-size: 18px;
+    }
+
+    /* Hero buttons stack vertically */
+    .hero-buttons{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        align-items:center;
+    }
+
+    .hero-buttons a{
+        width:200px;
+        text-align:center;
+    }
+
+    /* Profile section */
+    .profile-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .profile-image img{
+        width:140px;
+        height:180px;
+    }
+
+    /* Achievement cards */
+    .achievements-container{
+        grid-template-columns:1fr;
+    }
+
+    /* Experience cards */
+    .experience-card{
+        padding:20px;
+    }
+
+    /* Navbar spacing */
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
