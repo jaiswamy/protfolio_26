@@ -22,3 +22,17 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+window.addEventListener("load", function () {
+    const intro = document.getElementById("intro");
+
+    setTimeout(() => {
+        intro.style.opacity = "0";
+        intro.style.transition = "opacity 0.8s";
+
+        setTimeout(() => {
+            intro.style.display = "none";
+        }, 800);
+
+    }, 2000); // duration of intro
+});
