@@ -7,7 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
+<div id="intro">
+    <h1 id="intro-text">Welcome to My Portfolio</h1>
+</div>
+<!-- <div id="intro">
+    <div class="intro-content">
+        <h1>{ DevOps }</h1>
+        <p>Loading Cloud Infrastructure...</p>
+    </div>
+</div> -->
 <header>
     <nav>
         <h2 class="logo">JCS</h2>
@@ -24,6 +32,9 @@
 <section class="hero">
     <h1>Jai Chandra Swamy</h1>
     <h3>DevOps & Cloud Engineer</h3>
+    <p class="terminal">
+      <span id="typing"></span>
+    </p>
     <p>AWS | Kubernetes | Terraform | CI/CD | Monitoring</p>
     <div class="hero-buttons">
         <a href="index.html#projects" class="btn">View My Work</a>
@@ -40,7 +51,7 @@
     </div> -->
 </section>
 <div class="pipeline-line"></div>
-<section id="about">
+<section id="about" class="hidden">
     <h2>About Me</h2>
     <p>
         DevOps Engineer with 2+ years of experience designing and deploying scalable cloud-native
@@ -49,7 +60,7 @@
     </p>
 </section>
 <div class="pipeline-line"></div>
-<section id="skills">
+<section id="skills" class="hidden">
     <h2>Technical Skills</h2>
     <div class="skills-container">
         <div class="card">AWS (VPC, EC2, IAM, EKS, RDS)</div>
@@ -60,10 +71,11 @@
         <div class="card">Bash & Python</div>
         <div class="card">NGINX & Apache</div>
         <div class="card">AWS WAF & Security</div>
+        <div class="card">AI Powered Solutions</div>
     </div>
 </section>
 <div class="pipeline-line"></div>
-<section id="experience">
+<section id="experience" class="hidden">
     <h2>Professional Experience</h2>
 
     <div class="experience-container">
@@ -120,7 +132,7 @@
     </div>
 </section>
 <div class="pipeline-line"></div>
-<section id="projects">
+<section id="projects" class="hidden">
     <h2>Projects</h2>
 
     <div class="project-card">
@@ -143,7 +155,7 @@
 
 </section>
 <div class="pipeline-line"></div>
-<section id="achievements">
+<section id="achievements" class="hidden">
     <h2>Key Achievements</h2>
 
     <div class="achievements-container">
@@ -154,6 +166,16 @@
                 Reduced Mean Time to Detect (MTTD) by <strong>40%</strong> and
                 Mean Time to Resolve (MTTR) by <strong>25%</strong>
                 by implementing Prometheus & Grafana with alerting systems.
+            </p>
+        </div>
+        
+        <div class="achievement-card">
+            <h3>AI-Powered Kubernetes Troubleshooting</h3>
+            <p>
+                Implemented <strong>K8sGPT</strong> on an AWS EKS cluster to automatically detect
+                Kubernetes issues and generate intelligent explanations.
+                Integrated AI models (<strong>OpenAI</strong> and <strong>Ollama</strong>) to analyze
+                cluster errors and provide faster troubleshooting insights.
             </p>
         </div>
 
@@ -193,7 +215,7 @@
     </div>
 </section>
 <div class="pipeline-line"></div>
-<section id="contact">
+<section id="contact" class="hidden">
     <h2>Contact</h2>
 
     <p>
@@ -226,10 +248,5 @@
 
 <script src="script.js"></script>
 </body>
-<div id="intro">
-    <div class="intro-content">
-        <h1>{ DevOps }</h1>
-        <p>Loading Cloud Infrastructure...</p>
-    </div>
-</div>
+
 </html>

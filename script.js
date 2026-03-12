@@ -23,16 +23,50 @@ window.addEventListener("scroll", () => {
     });
 });
 
-window.addEventListener("load", function () {
-    const intro = document.getElementById("intro");
+// window.addEventListener("load", function () {
+//     const intro = document.getElementById("intro");
 
-    setTimeout(() => {
-        intro.style.opacity = "0";
-        intro.style.transition = "opacity 0.8s";
+//     setTimeout(() => {
+//         intro.style.opacity = "0";
+//         intro.style.transition = "opacity 0.8s";
 
-        setTimeout(() => {
-            intro.style.display = "none";
-        }, 800);
+//         setTimeout(() => {
+//             intro.style.display = "none";
+//         }, 800);
 
-    }, 2000); // duration of intro
+//     }, 2000); // duration of intro
+// });
+
+const text = "$ deploying cloud infrastructure...";
+let i = 0;
+
+function typingEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 40);
+    }
+}
+
+typingEffect();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+window.addEventListener("load", function(){
+
+    setTimeout(()=>{
+
+        const intro = document.getElementById("intro");
+        intro.style.display="none";
+
+    },2500);
+
 });
