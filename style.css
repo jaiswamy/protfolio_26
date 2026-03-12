@@ -520,50 +520,74 @@ header {
     transform: translateY(-3px);
 }
 
-
-/* INTRO SCREEN */
+/* ===== INTRO SCREEN ===== */
 
 #intro{
     position: fixed;
+    top:0;
+    left:0;
     width:100%;
     height:100vh;
     background:#0f172a;
+
     display:flex;
     justify-content:center;
     align-items:center;
+    text-align:center;
+
     z-index:9999;
 }
 
-/* text animation */
+/* Text */
 
 #intro-text{
     font-size:50px;
     color:#38bdf8;
-    animation: zoomIntro 2.5s ease forwards;
+    font-weight:bold;
+    animation:introZoom 3s ease forwards;
 }
 
-/* animation */
+/* Animation */
 
-@keyframes zoomIntro{
+@keyframes introZoom{
 
     0%{
-        transform: scale(0.5);
+        transform: scale(0.3);
         opacity:0;
     }
 
-    50%{
+    20%{
         transform: scale(1);
         opacity:1;
     }
 
+    /* pause */
+
+    70%{
+        transform: scale(1);
+        opacity:1;
+    }
+
+    /* fast zoom */
+
     100%{
-        transform: scale(2.5);
+        transform: scale(4);
         opacity:0;
     }
 
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
+@media (max-width:768px){
+
+#intro-text{
+    font-size:50px;
+    color:#38bdf8;
+    letter-spacing:2px;
+    animation:introZoom 3s ease forwards;
+}
+
+}
 
 @media (max-width: 768px) {
 
